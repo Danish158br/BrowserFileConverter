@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>File Converter - Convert TXT, PDF, DOCX, and more</title>
+    <meta name="description" content="The core of our service. Drag and drop to convert your files. All processing is done client-side for maximum privacy.">
+    
+    <!-- ... (other meta tags) ... -->
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">FileConverter</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="convert.html" class="active">Convert</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="converter-container">
+            <h1>Client-Side File Converter</h1>
+            <div id="drop-zone" class="drop-zone">
+                <p>Drag & drop a file here, or click to select a file</p>
+                <input type="file" id="file-input" hidden>
+            </div>
+            <textarea id="text-area" placeholder="Extracted text will appear here..."></textarea>
+            <div class="button-container">
+                <button id="to-docx">Convert to DOCX</button>
+                <button id="to-pdf">Convert to PDF</button>
+                <button id="to-md">Convert to Markdown</button>
+                <button id="to-html">Convert to HTML</button>
+                <button id="to-json">Convert to JSON</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Libraries for conversion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turndown/7.1.2/turndown.js"></script>
+
+    <script src="assets/js/converter.js"></script>
+</body>
+</html>
