@@ -39,44 +39,50 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html" class="logo">FileConverter</a>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="convert.html" class="active">Convert</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">FileConverter</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="convert.html" class="active">Convert</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="converter-container">
-            <h1>Client-Side File Converter</h1>
-            <div id="drop-zone" class="drop-zone">
-                <p>Drag & drop a file here, or click to select a file</p>
-                <input type="file" id="file-input" hidden>
-            </div>
-            <textarea id="text-area" placeholder="Extracted text will appear here..."></textarea>
-            <div class="button-container">
-                <button id="to-docx">Convert to DOCX</button>
-                <button id="to-pdf">Convert to PDF</button>
-                <button id="to-md">Convert to Markdown</button>
-                <button id="to-html">Convert to HTML</button>
-                <button id="to-json">Convert to JSON</button>
-                <button id="to-txt">Convert to TXT</button>
-            </div>
-        </section>
+        <div class="container">
+            <section class="converter-container">
+                <h1>Client-Side File Converter</h1>
+                <div id="drop-zone" class="drop-zone">
+                    <p>Drag & drop a file here, or click to select a file</p>
+                    <input type="file" id="file-input" hidden>
+                </div>
+                <textarea id="text-area" placeholder="Extracted text will appear here..."></textarea>
+                <div class="button-container">
+                    <button id="to-docx">Convert to DOCX</button>
+                    <button id="to-pdf">Convert to PDF</button>
+                    <button id="to-md">Convert to Markdown</button>
+                    <button id="to-html">Convert to HTML</button>
+                    <button id="to-json">Convert to JSON</button>
+                    <button id="to-txt">Convert to TXT</button>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Danish158br. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Danish158br. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- Libraries for conversion -->
