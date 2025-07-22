@@ -34,45 +34,90 @@
     }
     </script>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">FileConverter</a>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary" href="index.html">FileConverter</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="convert.html">Convert</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul id="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="convert.html">Convert</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <div class="container">
-            <section class="content">
-                <h1>Contact Us</h1>
-                <p>You can reach us via email at: <a href="mailto:contact@example.com">contact@example.com</a></p>
+        <div class="container py-5">
+            <section class="content bg-white p-4 rounded shadow-sm">
+                <h1 class="text-primary mb-4 text-center">Get in Touch with FileConverter</h1>
+                <p class="lead text-center mb-4">We're here to help! Whether you have questions about our services, need technical support, or want to provide feedback, our team is ready to assist you.</p>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title text-secondary mb-3">General Inquiries & Support</h5>
+                                <p class="card-text">For all general questions, technical support, or partnership inquiries, please reach out to us via email. We strive to respond to all messages within 24-48 business hours.</p>
+                                <p class="card-text lead"><i class="bi bi-envelope-fill me-2 text-primary"></i>Email: <a href="mailto:support@fileconverter.com" class="text-decoration-none text-primary">support@fileconverter.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title text-secondary mb-3">Feedback & Suggestions</h5>
+                                <p class="card-text">Your feedback is invaluable in helping us improve FileConverter. If you have suggestions for new features, improvements, or encountered any issues, please let us know.</p>
+                                <p class="card-text lead"><i class="bi bi-chat-dots-fill me-2 text-primary"></i>Submit Feedback: <a href="mailto:feedback@fileconverter.com" class="text-decoration-none text-primary">feedback@fileconverter.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-secondary mb-3">Connect With Us</h5>
+                                <p class="card-text">While we primarily operate through email for support, you can also follow us on our social media channels for updates and announcements.</p>
+                                <div class="d-flex justify-content-center gap-3 mt-3">
+                                    <a href="#" class="btn btn-outline-primary rounded-circle"><i class="bi bi-twitter fs-4"></i></a>
+                                    <a href="#" class="btn btn-outline-primary rounded-circle"><i class="bi bi-linkedin fs-4"></i></a>
+                                    <a href="#" class="btn btn-outline-primary rounded-circle"><i class="bi bi-github fs-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
 
-    <footer>
+    <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
-            <p>&copy; 2025 Danish158br. All Rights Reserved.</p>
+            <p class="mb-0">&copy; 2025 Danish158br. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-</body>
+    </body>
 </html>

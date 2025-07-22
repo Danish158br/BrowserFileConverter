@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://your-username.github.io/website/sitemap.xml
+Sitemap: https://Danish158br.github.io/BrowserFileConverter/sitemap.xml
