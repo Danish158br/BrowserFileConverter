@@ -107,6 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadBlob(blob, `${currentFileName}.json`);
     });
 
+    document.getElementById('to-txt').addEventListener('click', () => {
+        const blob = new Blob([currentFileContent], { type: 'text/plain' });
+        downloadBlob(blob, `${currentFileName}.txt`);
+    });
+
     const downloadBlob = (blob, name) => {
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
