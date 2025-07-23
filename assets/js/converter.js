@@ -31,56 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
         currentFileName = file.name.split('.').slice(0, -1).join('.');
         const reader = new FileReader();
 
-        if (file.type === "application/pdf") {
-            reader.onload = (e) => {
-                const { pdfjsLib } = window;
-                pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js`;
-                pdfjsLib.getDocument({ data: e.target.result }).promise.then(pdf => {
-                    let text = '';
-                    const numPages = pdf.numPages;
-                    const promises = [];
-                    for (let i = 1; i <= numPages; i++) {
-                        promises.push(pdf.getPage(i).then(page => page.getTextContent()));
-                    }
-                    return Promise.all(promises).then(contents => {
-                        contents.forEach(content => {
-                            content.items.forEach(item => {
-                                text += item.str + ' ';
-                            });
-                            text += '\n';
-                        });
-                        textArea.value = text;
-                        currentFileContent = text;
-                    });
-                });
-            };
-            reader.readAsArrayBuffer(file);
-        } else if (file.name.endsWith('.docx')) {
-            reader.onload = (e) => {
-                mammoth.extractRawText({ arrayBuffer: e.target.result })
-                    .then(result => {
-                        textArea.value = result.value;
-                        currentFileContent = result.value;
-                    })
-                    .catch(err => console.log(err));
-            };
-            reader.readAsArrayBuffer(file);
-        } else {
-            reader.onload = (e) => {
-                textArea.value = e.target.result;
-                currentFileContent = e.target.result;
-            };
-            reader.readAsText(file);
-        }
+        reader.onload = (e) => {
+            textArea.value = e.target.result;
+            currentFileContent = e.target.result;
+        };
+        reader.readAsText(file);
     };
 
     // Conversion functions
-    document.getElementById('to-docx').addEventListener('click', () => {
-        // Note: Creating DOCX client-side is complex. This is a simplified text-in-docx.
-        // For a real implementation, a library like docx.js would be needed.
-        const blob = new Blob([currentFileContent], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
-        downloadBlob(blob, `${currentFileName}.docx`);
-    });
+    
 
     document.getElementById('to-pdf').addEventListener('click', () => {
         const { jsPDF } = window.jspdf;
@@ -90,9 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('to-md').addEventListener('click', () => {
-        const turndownService = new TurndownService();
-        const markdown = turndownService.turndown(currentFileContent);
-        const blob = new Blob([markdown], { type: 'text/markdown' });
+        const blob = new Blob([currentFileContent], { type: 'text/markdown' });
         downloadBlob(blob, `${currentFileName}.md`);
     });
 
